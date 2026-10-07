@@ -37,3 +37,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+### 本地运行时产物（自动生成的密钥库与临时文件）###
+/local-keystore.json
+/local-keystore.json.tmp
+*.keystore.json

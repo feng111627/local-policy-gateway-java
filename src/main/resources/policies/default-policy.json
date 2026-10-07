@@ -1,0 +1,1 @@
+{"version":"v2","rules":[{"id":"d","effect":"DENY","role":"reader","resource":"*","action":"*"}]}
