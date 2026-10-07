@@ -1,0 +1,39 @@
+{
+  "policyId": "default-local-policy",
+  "name": "内置默认本地策略",
+  "version": 1,
+  "rules": [
+    {
+      "id": "deny-prod-write-by-default",
+      "effect": "DENY",
+      "priority": 100,
+      "roles": ["viewer"],
+      "resources": ["docs/*"],
+      "env": {"env": ["prod"]}
+    },
+    {
+      "id": "allow-admin-docs-prod",
+      "effect": "ALLOW",
+      "priority": 200,
+      "roles": ["admin"],
+      "resources": ["docs/*"],
+      "env": {"env": ["prod", "staging"]}
+    },
+    {
+      "id": "allow-viewer-docs-nonprod",
+      "effect": "ALLOW",
+      "priority": 100,
+      "roles": ["viewer", "admin"],
+      "resources": ["docs/*"],
+      "env": {"env": ["dev", "staging"]}
+    },
+    {
+      "id": "allow-health-anyone",
+      "effect": "ALLOW",
+      "priority": 10,
+      "roles": null,
+      "resources": ["health"],
+      "env": null
+    }
+  ]
+}
